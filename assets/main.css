@@ -1,0 +1,43 @@
+.boid {
+    width : 5vmin;
+    height : 5vmin;
+    position : absolute;
+    left : calc(1vmin * var(--x, 0vmin));
+    top : calc(1vmin * var(--y, 0vmin));
+    transform : rotate(calc(var(--rot, 0deg) * 1deg));
+    clip-path : polygon(25% 100%, 50% /*12.5%*/87.5%, 75% 100%, 50% 0%);
+    background : var(--bord, black);
+}
+
+.boid > div {
+    --color : inherit;
+    /* width : calc(5vmin - 5px); */
+    /* height : calc(5vmin - 5px); */
+    width : 3vmin;
+    height : 3vmin;
+    position : absolute;
+    /* left : 2.5px; */
+    /* top : 2.5px; */
+    left : 1vmin;
+    top : 1vmin;
+    clip-path : polygon(25% 100%, 50% /*12.5%*/87.5%, 75% 100%, 50% 0%);
+    background : var(--color, white);
+}
+
+.gridline {
+    position : absolute;
+    left : calc(var(--x, 0) * 1vmin * var(--mul, 10));
+    top : calc(var(--y, 0) * 1vmin * var(--mul, 10));
+    width : calc(var(--w, 0.01) * 100vmin);
+    height : calc(var(--h, 0.01) * 100vmin);
+    background : black;
+}
+
+#gridlines {
+    position : absolute;
+    left : 0px;
+    top : 0px;
+    width : 100vmin;
+    height : 100vmin;
+    overflow : hidden;
+}
